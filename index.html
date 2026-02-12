@@ -3,31 +3,115 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
-    <title>PetLife</title>
+    <title>애들이랑 - 반려가족 라이프 플랫폼</title>
+    
+    <!-- Favicon -->
+    <link rel="icon" type="image/png" href="/assets/logo.png" />
+    
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    
+    <!-- Tailwind CSS -->
     <script src="https://cdn.tailwindcss.com"></script>
-    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@300;400;500;700&display=swap" rel="stylesheet">
+    
+    <!-- Brand Design Tokens -->
+    <link rel="stylesheet" href="/styles/theme.css" />
+    
+    <!-- Tailwind Config -->
+    <script>
+      tailwind.config = {
+        theme: {
+          extend: {
+            colors: {
+              primary: {
+                DEFAULT: '#F26B1D',
+                light: '#FF8347',
+                dark: '#D45A14',
+              },
+              secondary: {
+                DEFAULT: '#FF8C00',
+                light: '#FFA333',
+                dark: '#E67D00',
+              },
+              accent: {
+                DEFAULT: '#FFA042',
+                light: '#FFB870',
+                dark: '#E88A30',
+              },
+              brand: {
+                bg: '#FFFFFF',
+                'bg-soft': '#FFF9F5',
+                'bg-muted': '#FFF3E0',
+                'bg-warm': '#FFFAF6',
+              }
+            },
+            fontFamily: {
+              sans: ['Noto Sans KR', '-apple-system', 'BlinkMacSystemFont', 'sans-serif'],
+            },
+            boxShadow: {
+              'soft': '0 4px 20px -5px rgba(242, 107, 29, 0.1)',
+              'glow': '0 8px 30px rgba(242, 107, 29, 0.15)',
+              'card': '0 2px 12px rgba(0, 0, 0, 0.04)',
+              'card-hover': '0 8px 24px rgba(242, 107, 29, 0.12)',
+            }
+          }
+        }
+      }
+    </script>
+    
     <style>
+      /* Base Styles */
+      * {
+        box-sizing: border-box;
+      }
+      
       body {
-        font-family: 'Noto Sans KR', sans-serif;
-        background-color: #f3f4f6; /* Gray-100 for desktop background */
+        font-family: 'Noto Sans KR', -apple-system, BlinkMacSystemFont, sans-serif;
+        background-color: #f3f4f6;
         margin: 0;
         padding: 0;
-        overflow: hidden; /* Prevent body scroll, handle in app container */
+        overflow: hidden;
+        -webkit-font-smoothing: antialiased;
+        -moz-osx-font-smoothing: grayscale;
       }
+      
       /* Hide scrollbar for Chrome, Safari and Opera */
       .scrollbar-hide::-webkit-scrollbar {
-          display: none;
+        display: none;
       }
+      
       /* Hide scrollbar for IE, Edge and Firefox */
       .scrollbar-hide {
-          -ms-overflow-style: none;  /* IE and Edge */
-          scrollbar-width: none;  /* Firefox */
+        -ms-overflow-style: none;
+        scrollbar-width: none;
       }
+      
+      /* Safe Area */
       .safe-area-bottom {
         padding-bottom: env(safe-area-inset-bottom);
       }
+      
+      /* Selection Color */
+      ::selection {
+        background-color: #FFF3E0;
+        color: #F26B1D;
+      }
+      
+      /* Focus Ring */
+      :focus-visible {
+        outline: 2px solid #FFA042;
+        outline-offset: 2px;
+      }
+      
+      /* Smooth Scroll */
+      html {
+        scroll-behavior: smooth;
+      }
     </style>
-  <script type="importmap">
+    
+    <script type="importmap">
 {
   "imports": {
     "react-dom/": "https://esm.sh/react-dom@^19.2.4/",
@@ -37,7 +121,7 @@
   }
 }
 </script>
-</head>
+  </head>
   <body>
     <div id="root"></div>
     <script type="module" src="/index.tsx"></script>
