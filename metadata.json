@@ -1,0 +1,7 @@
+{
+  "name": "애들이랑 - 반려동물 통합 플랫폼",
+  "description": "반려가족의 일상을 위한 통합 슈퍼앱. 펫푸드부터 장례까지 모든 서비스를 제공합니다.",
+  "requestFramePermissions": [
+    "geolocation"
+  ]
+}
