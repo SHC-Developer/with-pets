@@ -80,7 +80,7 @@ const App: React.FC = () => {
     switch (step) {
       case 'product-detail': setStep('product-list'); break;
       case 'service-detail': setStep('home'); break; 
-      case 'product-list': setStep('category-food'); break;
+      case 'product-list': setStep('category-main'); break;
       
       // Category Back Logic
       case 'category-food': setStep('category-main'); break;
@@ -177,12 +177,9 @@ const App: React.FC = () => {
               
               {step === 'category-main' && (
                 <CategoryMainScreen 
-                  onCategorySelect={(cat) => {
-                    if (cat === 'pet-food') setStep('category-food');
-                    if (cat === 'pet-service') setStep('category-service');
-                    if (cat === 'lifestyle') setStep('category-lifestyle');
-                    if (cat === 'enter') setStep('category-enter');
-                    if (cat === 'funeral') setStep('funeral-main');
+                  onCategorySelect={(categoryId, item) => {
+                    if (categoryId === 'funeral') setStep('funeral-main');
+                    else setStep('product-list');
                   }} 
                 />
               )}
