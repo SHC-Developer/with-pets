@@ -7,24 +7,46 @@
     <script src="https://cdn.tailwindcss.com"></script>
     <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@300;400;500;700&display=swap" rel="stylesheet">
     <style>
+      :root {
+        /* 앱 하단 여백: 기기 safe-area 또는 브라우저 하단 UI 대비 최소값(24px) */
+        --app-bottom-inset: max(env(safe-area-inset-bottom), 24px);
+        /* 하단 네비 높이(64px) + 하단 여백 → 스크롤 영역 padding-bottom으로 사용 */
+        --bottom-nav-height: 4rem;
+        --bottom-nav-total: calc(var(--bottom-nav-height) + var(--app-bottom-inset));
+        /* 뷰포트 높이: 모바일 브라우저에서 주소창/하단바 제외한 보이는 영역 기준 */
+        --app-viewport-height: 100vh;
+        --app-viewport-height-dynamic: 100dvh;
+      }
+      /* 동적 뷰포트 미지원 구형 브라우저 폴백 */
+      @supports (height: 100dvh) {
+        :root {
+          --app-viewport-height: 100dvh;
+        }
+      }
+      html, body {
+        height: 100%;
+        min-height: var(--app-viewport-height);
+      }
       body {
         font-family: 'Noto Sans KR', sans-serif;
-        background-color: #f3f4f6; /* Gray-100 for desktop background */
+        background-color: #f3f4f6;
         margin: 0;
         padding: 0;
-        overflow: hidden; /* Prevent body scroll, handle in app container */
+        overflow: hidden;
+      }
+      #root {
+        min-height: var(--app-viewport-height);
       }
       /* Hide scrollbar for Chrome, Safari and Opera */
       .scrollbar-hide::-webkit-scrollbar {
           display: none;
       }
-      /* Hide scrollbar for IE, Edge and Firefox */
       .scrollbar-hide {
-          -ms-overflow-style: none;  /* IE and Edge */
-          scrollbar-width: none;  /* Firefox */
+          -ms-overflow-style: none;
+          scrollbar-width: none;
       }
       .safe-area-bottom {
-        padding-bottom: env(safe-area-inset-bottom);
+        padding-bottom: var(--app-bottom-inset);
       }
     </style>
   <script type="importmap">

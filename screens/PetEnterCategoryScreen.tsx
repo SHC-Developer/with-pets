@@ -30,7 +30,7 @@ const PetEnterCategoryScreen: React.FC<PetEnterCategoryScreenProps> = ({ onBack 
         </button>
       </div>
 
-      <div className="flex-1 overflow-y-auto scrollbar-hide bg-gray-50">
+      <div className="flex-1 overflow-y-auto scrollbar-hide bg-gray-50 pb-[var(--bottom-nav-total)]">
         {/* Sub Category Grid */}
         <div className="px-5 py-6 bg-white mb-2 shadow-sm rounded-b-3xl">
           <div className="grid grid-cols-4 gap-2">

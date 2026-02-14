@@ -46,7 +46,7 @@ const CategoryMainScreen: React.FC<CategoryMainScreenProps> = ({ onCategorySelec
       </div>
 
       {/* 섹션 & 아이콘 그리드 */}
-      <div className="flex-1 overflow-y-auto scrollbar-hide">
+      <div className="flex-1 overflow-y-auto scrollbar-hide pb-[var(--bottom-nav-total)]">
         <div className="p-4 md:p-6">
           {activeCategory.sections.map((section) => (
             <CategorySection

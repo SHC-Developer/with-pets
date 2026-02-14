@@ -92,7 +92,7 @@ const CommunityScreen: React.FC = () => {
       </div>
 
       {/* 4. Content Area */}
-      <div className="flex-1 overflow-y-auto scrollbar-hide bg-gray-50">
+      <div className="flex-1 overflow-y-auto scrollbar-hide bg-gray-50 pb-[var(--bottom-nav-total)]">
         
         {/* --- FEED TAB --- */}
         {activeTab === 'feed' && (

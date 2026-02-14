@@ -39,7 +39,7 @@ const PetServiceCategoryScreen: React.FC<PetServiceCategoryScreenProps> = ({ onB
         </button>
       </div>
 
-      <div className="flex-1 overflow-y-auto scrollbar-hide bg-gray-50">
+      <div className="flex-1 overflow-y-auto scrollbar-hide bg-gray-50 pb-[var(--bottom-nav-total)]">
         
         {/* Sub Categories Grid */}
         <div className="bg-white px-5 py-6 mb-2 rounded-b-3xl shadow-sm">

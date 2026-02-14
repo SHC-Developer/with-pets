@@ -50,7 +50,7 @@ const LifestyleCategoryScreen: React.FC<LifestyleCategoryScreenProps> = ({ onBac
         })}
       </div>
 
-      <div className="flex-1 overflow-y-auto scrollbar-hide bg-gray-50">
+      <div className="flex-1 overflow-y-auto scrollbar-hide bg-gray-50 pb-[var(--bottom-nav-total)]">
         
         {/* Space Tab Content */}
         {activeTab === 'space' && (

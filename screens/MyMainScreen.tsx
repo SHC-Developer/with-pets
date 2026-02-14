@@ -8,7 +8,7 @@ interface MyMainScreenProps {
 
 const MyMainScreen: React.FC<MyMainScreenProps> = ({ onNavigateToReserve, onNavigateToReport }) => {
   return (
-    <div className="flex flex-col h-full bg-gray-50 pb-20 overflow-y-auto scrollbar-hide">
+    <div className="flex flex-col h-full bg-gray-50 pb-[var(--bottom-nav-total)] overflow-y-auto scrollbar-hide">
       
       {/* 1. Header & Profile */}
       <div className="bg-white px-5 pt-6 pb-6 rounded-b-3xl shadow-sm mb-4">

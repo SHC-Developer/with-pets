@@ -26,7 +26,7 @@ const HomeScreen: React.FC<HomeScreenProps> = ({ onServiceClick, onNavigateToMy 
       />
 
       {/* Scrollable Main Content */}
-      <main className="flex-1 overflow-y-auto scrollbar-hide pb-24 bg-gray-50">
+      <main className="flex-1 overflow-y-auto scrollbar-hide pb-[var(--bottom-nav-total)] bg-gray-50">
         
         {/* 1. 오늘의 추천 (Hero) */}
         <section className="mt-4">

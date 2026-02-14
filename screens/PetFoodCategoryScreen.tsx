@@ -52,7 +52,7 @@ const PetFoodCategoryScreen: React.FC<PetFoodCategoryScreenProps> = ({ onBack, o
         ))}
       </div>
 
-      <div className="flex-1 overflow-y-auto scrollbar-hide bg-gray-50">
+      <div className="flex-1 overflow-y-auto scrollbar-hide bg-gray-50 pb-[var(--bottom-nav-total)]">
         {/* Description */}
         <div className="px-5 py-6 bg-white mb-2">
           <p className="text-xl font-bold text-gray-900 mb-1">

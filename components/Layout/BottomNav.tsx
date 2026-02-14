@@ -20,7 +20,7 @@ const BottomNav: React.FC<BottomNavProps> = ({ activeTab = 'home', onTabChange }
   // Active Bg Fill: fill-[#FFF3E0] (Light Orange)
 
   return (
-    <nav className="absolute bottom-0 w-full bg-white border-t border-gray-100 pb-[env(safe-area-inset-bottom)] z-50 shadow-[0_-5px_15px_-5px_rgba(0,0,0,0.05)]">
+    <nav className="absolute bottom-0 w-full bg-white border-t border-gray-100 pb-[var(--app-bottom-inset)] z-50 shadow-[0_-5px_15px_-5px_rgba(0,0,0,0.05)]">
       <div className="flex justify-between items-center px-2 h-16">
         {tabs.map((tab) => {
           const isActive = activeTab === tab.id;

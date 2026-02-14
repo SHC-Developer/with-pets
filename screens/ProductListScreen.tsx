@@ -90,7 +90,7 @@ const ProductListScreen: React.FC<ProductListScreenProps> = ({ onBack, onProduct
       </div>
 
       {/* Product List */}
-      <div className="flex-1 overflow-y-auto px-5 py-4 space-y-4">
+      <div className="flex-1 overflow-y-auto px-5 py-4 space-y-4 pb-[var(--bottom-nav-total)]">
         {products.map((product) => (
           <div 
             key={product.id} 

@@ -39,7 +39,7 @@ const MyReportScreen: React.FC<MyReportScreenProps> = ({ onBack }) => {
          </div>
       </div>
 
-      <div className="flex-1 overflow-y-auto p-5 scrollbar-hide">
+      <div className="flex-1 overflow-y-auto p-5 scrollbar-hide pb-[var(--bottom-nav-total)]">
         {activeTab === 'health' && (
            <div className="relative">
               {/* Vertical Line */}

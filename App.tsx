@@ -118,22 +118,21 @@ const App: React.FC = () => {
   ].includes(step);
 
   return (
-    // 1. Outer Background: White
-    <div className="min-h-screen w-full bg-white flex justify-center overflow-hidden">
+    // 1. Outer Background: White (모바일 브라우저에서 보이는 영역 기준 높이 사용)
+    <div className="min-h-[var(--app-viewport-height)] w-full bg-white flex justify-center overflow-hidden">
       
       {/* 2. Main Container: Max Width 1440px */}
-      <div className="w-full max-w-[1440px] flex h-screen shadow-2xl relative">
+      <div className="w-full max-w-[1440px] flex h-[var(--app-viewport-height)] max-h-[var(--app-viewport-height)] shadow-2xl relative">
         
         {/* 3. LEFT SIDE: Fluid Width (Remaining space) */}
         <div className="flex-1 hidden lg:flex relative z-10 bg-white">
           <WebLandingSide onSearch={handleWebSearch} />
         </div>
 
-        {/* 4. RIGHT SIDE: Fixed Width (425px) */}
-        {/* Border-left for separation, White background */}
-        <div className="w-full lg:w-[425px] flex-shrink-0 h-full bg-white relative border-l border-gray-100 flex flex-col mx-auto lg:mx-0">
+        {/* 4. RIGHT SIDE: Fixed Width (425px) - 앱 영역 */}
+        <div className="w-full lg:w-[425px] flex-shrink-0 h-full min-h-0 bg-white relative border-l border-gray-100 flex flex-col mx-auto lg:mx-0">
           
-          <div className="flex-1 overflow-hidden relative bg-white">
+          <div className="flex-1 overflow-hidden relative bg-white min-h-0">
             {step === 'splash' && <SplashScreen />}
             
             {step === 'onboarding' && (

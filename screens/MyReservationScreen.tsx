@@ -36,7 +36,7 @@ const MyReservationScreen: React.FC<MyReservationScreenProps> = ({ onBack }) => 
         </button>
       </div>
 
-      <div className="flex-1 overflow-y-auto bg-gray-50 p-5 scrollbar-hide">
+      <div className="flex-1 overflow-y-auto bg-gray-50 p-5 scrollbar-hide pb-[var(--bottom-nav-total)]">
         
         {/* Reservation Content */}
         {activeTab === 'reserve' && (
