@@ -45,17 +45,20 @@ const NoticeStrip: React.FC = () => {
         aria-label="공지 보기"
       >
         <span className="text-[11px] font-semibold text-[#F26B1D] shrink-0">공지</span>
-        <div className="flex-1 min-w-0 h-5 relative overflow-hidden">
-          {/* 현재 공지: 슬라이드 시 위로 올라가며 사라짐 */}
+        {/* 한 줄 고정: line-height=높이, overflow-hidden으로 잘림 방지 */}
+        <div className="flex-1 min-w-0 h-[1.25rem] relative overflow-hidden">
+          {/* 현재 공지: 슬라이드할 때만 transition 적용 → 끝나고 isSliding false 시 이전 글로 되돌아가는 애니 없음 */}
           <span
-            className="absolute left-0 right-0 top-0 text-xs text-gray-700 font-medium truncate transition-transform duration-300 ease-out"
+            className={`absolute left-0 right-0 top-0 text-xs text-gray-700 font-medium truncate leading-[1.25rem] ${
+              isSliding ? 'transition-transform duration-300 ease-out' : ''
+            }`}
             style={{ transform: isSliding ? 'translateY(-100%)' : 'translateY(0)' }}
           >
             {NOTICES[current]}
           </span>
           {/* 다음 공지: 아래에서 위로 올라옴 */}
           <span
-            className="absolute left-0 right-0 top-0 text-xs text-gray-700 font-medium truncate transition-transform duration-300 ease-out"
+            className="absolute left-0 right-0 top-0 text-xs text-gray-700 font-medium truncate leading-[1.25rem] transition-transform duration-300 ease-out"
             style={{ transform: isSliding ? 'translateY(0)' : 'translateY(100%)' }}
           >
             {NOTICES[next]}
