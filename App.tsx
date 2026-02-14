@@ -171,6 +171,7 @@ const App: React.FC = () => {
                 <HomeScreen 
                   onServiceClick={() => setStep('service-detail')}
                   onNavigateToMy={() => handleTabChange('my')}
+                  petType={selectedPetType}
                 />
               )}
               
